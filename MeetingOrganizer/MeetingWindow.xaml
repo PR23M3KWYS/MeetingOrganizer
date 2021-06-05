@@ -1,0 +1,33 @@
+﻿<Window x:Class="MeetingOrganizer.MeetingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeetingOrganizer"
+        mc:Ignorable="d"
+        Title="MeetingWindow" Height="450" Width="800" Background="#F7FFF7">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="AddToMeetingBtn" Grid.Column="0" Content="Dodaj do spotkania" Click="AddToMeetingBtn_Click" Background="#292F36" Foreground="#F7FFF7" FontSize="18" BorderThickness="0"/>
+            <Button x:Name="DelateFromMeetingBtn" Grid.Column="1" Content="Usuń ze spotkania" Background="#292F36" Foreground="#F7FFF7" FontSize="18" BorderThickness="0" Click="DelateFromMeetingBtn_Click" />
+        </Grid>
+        <DataGrid x:Name="MeetingPersonsDataGrid" AutoGenerateColumns="False" Grid.Row="1" Margin="20" IsReadOnly="True" FontSize="18"  RowBackground="White" AlternatingRowBackground="WhiteSmoke"  Foreground="#292F36">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id Osoby" Binding="{Binding IdOsoby}"/>
+                <DataGridTextColumn Header="Imię" Binding="{Binding Imie}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
+                <DataGridTextColumn Header="Adres Email" Binding="{Binding AdresEmail}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
